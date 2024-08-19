@@ -1,6 +1,7 @@
 # ClevoFanControl
 
-**Picture**
+基于[djsubtronic/ClevoFanControl](https://github.com/djsubtronic/ClevoFanControl)的项目修改，下载地址: [蓝奏云](https://a01.lanzout.com/i2Qd127wjbah)
+
 ![img0](https://fastly.jsdelivr.net/gh/lalakii/ClevoFanControl@master/pic.jpg)
 
 A custom fan control control app for Clevo laptops. The fan icon is borrowed from the Obsidian Fan Control app.
