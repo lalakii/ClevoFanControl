@@ -1,5 +1,8 @@
 # ClevoFanControl
 
+**Picture**
+![img0](https://fastly.jsdelivr.net/gh/lalakii/ClevoFanControl@master/pic.jpg)
+
 A custom fan control control app for Clevo laptops. The fan icon is borrowed from the Obsidian Fan Control app.
 
 Currently the app is very basic. It has 10 preset temperature units. Under 40 C, the fans will automatically be set to 0. Anything 40 through to 85 can be configured at 5 C intervals. It only uses two fans (1 for CPU and 2 for GPU) but I'm sure this can be easily modified.
