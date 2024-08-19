@@ -1,25 +1,28 @@
 ﻿using System;
-using System.IO;
 using System.Runtime.InteropServices;
 
-namespace ClevoFanControl {
-    public class ClevoEcInfo : IFanControl {
-        IntPtr pDll;
-        IntPtr pInitIo;
-        IntPtr pGetTempFanDuty;
-        IntPtr pSetFanDuty;
-        IntPtr pSetFanDutyAuto;
-        InitIo initIo;
-        GetTempFanDuty getTempFanDuty;
-        SetFanDuty2 setFanDuty;
-        SetFanDutyAuto setFanDutyAuto;
+namespace ClevoFanControl
+{
+    public class ClevoEcInfo : IFanControl
+    {
+        private IntPtr pDll;
+        private IntPtr pInitIo;
+        private IntPtr pGetTempFanDuty;
+        private IntPtr pSetFanDuty;
+        private IntPtr pSetFanDutyAuto;
+        private InitIo initIo;
+        private GetTempFanDuty getTempFanDuty;
+        private SetFanDuty2 setFanDuty;
+        private SetFanDutyAuto setFanDutyAuto;
 
-        public ClevoEcInfo() {
+        public ClevoEcInfo()
+        {
             Init();
         }
 
-        private void Init() {
-            pDll = NativeMethods.LoadLibrary(Path.GetDirectoryName(System.Reflection.Assembly.GetExecutingAssembly().Location) + "\\ClevoEcInfo.dll");
+        private void Init()
+        {
+            pDll = NativeMethods.LoadLibrary("ClevoEcInfo.dll");
             if (pDll == IntPtr.Zero) throw new Exception("Can't load ClevoEcInfo.dll");
 
             pInitIo = NativeMethods.GetProcAddress(pDll, "InitIo");
@@ -27,7 +30,6 @@ namespace ClevoFanControl {
             pSetFanDuty = NativeMethods.GetProcAddress(pDll, "SetFanDuty");
             pSetFanDutyAuto = NativeMethods.GetProcAddress(pDll, "SetFanDutyAuto");
             if (pInitIo == IntPtr.Zero || pGetTempFanDuty == IntPtr.Zero || pSetFanDuty == IntPtr.Zero || pSetFanDutyAuto == IntPtr.Zero) throw new Exception("Can't find methods");
-
 
             initIo = (InitIo)Marshal.GetDelegateForFunctionPointer(pInitIo, typeof(InitIo));
             getTempFanDuty = (GetTempFanDuty)Marshal.GetDelegateForFunctionPointer(pGetTempFanDuty, typeof(GetTempFanDuty));
@@ -37,34 +39,40 @@ namespace ClevoFanControl {
             bool theResult = initIo();
         }
 
-        public ECData2 GetECData(int fanNr) {
+        public ECData2 GetECData(int fanNr)
+        {
             return getTempFanDuty(fanNr);
         }
 
-        public void SetFanSpeed(int fanNr, int fanSpeedPercentage) {
+        public void SetFanSpeed(int fanNr, int fanSpeedPercentage)
+        {
             setFanDuty(fanNr, fanSpeedPercentage * 255 / 100);
         }
 
-        public void SetFansAuto(int fanNr) {
+        public void SetFansAuto(int fanNr)
+        {
             setFanDutyAuto(fanNr);
         }
 
-
         #region IDisposable Support
+
         private bool disposedValue = false; // To detect redundant calls
 
-        protected virtual void Dispose(bool disposing) {
-            if (!disposedValue) {
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!disposedValue)
+            {
                 disposedValue = true;
             }
         }
 
-        public void Dispose() {
+        public void Dispose()
+        {
             // Do not change this code. Put cleanup code in Dispose(bool disposing) above.
             Dispose(true);
         }
-        #endregion
 
+        #endregion IDisposable Support
 
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
         private delegate bool InitIo();
@@ -77,11 +85,11 @@ namespace ClevoFanControl {
 
         [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
         private delegate void SetFanDutyAuto(int p1);
-
     }
 
     [StructLayout(LayoutKind.Sequential)]
-    public struct ECData2 {
+    public struct ECData2
+    {
         public byte Remote;
         public byte Local;
         public byte FanDuty;

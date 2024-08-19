@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Runtime.InteropServices;
 
-namespace ClevoFanControl {
-    static class NativeMethods {
+namespace ClevoFanControl
+{
+    internal static class NativeMethods
+    {
         [DllImport("kernel32.dll")]
         public static extern IntPtr LoadLibrary(string dllToLoad);
 

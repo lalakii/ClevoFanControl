@@ -62,7 +62,7 @@
             this.lblXAxis10.Name = "lblXAxis10";
             this.lblXAxis10.Size = new System.Drawing.Size(45, 20);
             this.lblXAxis10.TabIndex = 29;
-            this.lblXAxis10.Text = "90°";
+            this.lblXAxis10.Text = "90℃";
             this.lblXAxis10.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblXAxis9
@@ -75,7 +75,7 @@
             this.lblXAxis9.Name = "lblXAxis9";
             this.lblXAxis9.Size = new System.Drawing.Size(45, 20);
             this.lblXAxis9.TabIndex = 28;
-            this.lblXAxis9.Text = "80°";
+            this.lblXAxis9.Text = "80℃";
             this.lblXAxis9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblXAxis8
@@ -88,7 +88,7 @@
             this.lblXAxis8.Name = "lblXAxis8";
             this.lblXAxis8.Size = new System.Drawing.Size(45, 20);
             this.lblXAxis8.TabIndex = 27;
-            this.lblXAxis8.Text = "75°";
+            this.lblXAxis8.Text = "75℃";
             this.lblXAxis8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblXAxis7
@@ -101,7 +101,7 @@
             this.lblXAxis7.Name = "lblXAxis7";
             this.lblXAxis7.Size = new System.Drawing.Size(45, 20);
             this.lblXAxis7.TabIndex = 26;
-            this.lblXAxis7.Text = "70°";
+            this.lblXAxis7.Text = "70℃";
             this.lblXAxis7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblXAxis6
@@ -114,7 +114,7 @@
             this.lblXAxis6.Name = "lblXAxis6";
             this.lblXAxis6.Size = new System.Drawing.Size(45, 20);
             this.lblXAxis6.TabIndex = 25;
-            this.lblXAxis6.Text = "65°";
+            this.lblXAxis6.Text = "65℃";
             this.lblXAxis6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblXAxis5
@@ -127,7 +127,7 @@
             this.lblXAxis5.Name = "lblXAxis5";
             this.lblXAxis5.Size = new System.Drawing.Size(45, 20);
             this.lblXAxis5.TabIndex = 24;
-            this.lblXAxis5.Text = "60°";
+            this.lblXAxis5.Text = "60℃";
             this.lblXAxis5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblXAxis4
@@ -140,7 +140,7 @@
             this.lblXAxis4.Name = "lblXAxis4";
             this.lblXAxis4.Size = new System.Drawing.Size(45, 20);
             this.lblXAxis4.TabIndex = 23;
-            this.lblXAxis4.Text = "55°";
+            this.lblXAxis4.Text = "55℃";
             this.lblXAxis4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblXAxis3
@@ -153,7 +153,7 @@
             this.lblXAxis3.Name = "lblXAxis3";
             this.lblXAxis3.Size = new System.Drawing.Size(45, 20);
             this.lblXAxis3.TabIndex = 22;
-            this.lblXAxis3.Text = "50°";
+            this.lblXAxis3.Text = "50℃";
             this.lblXAxis3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblXAxis2
@@ -166,7 +166,7 @@
             this.lblXAxis2.Name = "lblXAxis2";
             this.lblXAxis2.Size = new System.Drawing.Size(45, 20);
             this.lblXAxis2.TabIndex = 21;
-            this.lblXAxis2.Text = "45°";
+            this.lblXAxis2.Text = "45℃";
             this.lblXAxis2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // lblXAxis1
@@ -179,7 +179,7 @@
             this.lblXAxis1.Name = "lblXAxis1";
             this.lblXAxis1.Size = new System.Drawing.Size(45, 20);
             this.lblXAxis1.TabIndex = 20;
-            this.lblXAxis1.Text = "40°";
+            this.lblXAxis1.Text = "40℃";
             this.lblXAxis1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // PlotCanvas
