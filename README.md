@@ -1,6 +1,6 @@
 # ClevoFanControl
 
-基于[djsubtronic/ClevoFanControl](https://github.com/djsubtronic/ClevoFanControl)的项目修改，下载地址: [蓝奏云](https://a01.lanzout.com/iOQ4H296taqd)
+基于[djsubtronic/ClevoFanControl](https://github.com/djsubtronic/ClevoFanControl)的项目修改，下载地址: [蓝奏云](https://a01.lanzout.com/iKWuB2970w7i)
 
 ![img0](https://fastly.jsdelivr.net/gh/lalakii/ClevoFanControl@master/pic.jpg)
 

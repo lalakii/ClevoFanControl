@@ -238,6 +238,7 @@ namespace ClevoFanControl
         }
 
         private int retryCount = 0;
+        private System.Windows.Forms.Timer retryResetTimer;
 
         private void tmrMain_Tick(object sender, EventArgs e)
         {
@@ -249,9 +250,18 @@ namespace ClevoFanControl
 
             if (currentCpuTemp > maxCpuTemp)
             {
-                if (currentCpuTemp - maxCpuTemp > 40 && retryCount < 10)
+                if (currentCpuTemp - maxCpuTemp > 40 && retryCount < 6)
                 {
                     retryCount++;
+                    if (retryResetTimer == null)
+                    {
+                        retryResetTimer = new System.Windows.Forms.Timer
+                        {
+                            Interval = 300000
+                        };
+                        retryResetTimer.Tick += RetryResetTimer_Tick;
+                        retryResetTimer.Start();
+                    }
                     return;
                 }
                 else
@@ -340,6 +350,11 @@ namespace ClevoFanControl
 
             prevCpuTemp = currentCpuTemp;
             prevGpuTemp = currentGpuTemp;
+        }
+
+        private void RetryResetTimer_Tick(object sender, EventArgs e)
+        {
+            retryCount = 0;
         }
 
         private int CalcFanPercentage(string device, int currentTemp)
