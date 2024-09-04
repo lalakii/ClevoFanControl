@@ -10,13 +10,15 @@ namespace ClevoFanControl
 {
     internal static class Program
     {
+        public static Mutex mutex;
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
         [STAThread]
         private static void Main()
         {
-            new Mutex(true, "ClevoFanControl_LALAKI_PORT", out bool isSingleton);
+            mutex = new Mutex(true, "ClevoFanControl_LALAKI_PORT", out bool isSingleton);
             if (!isSingleton)
             {
                 MessageBox.Show("Clevo Fan Control is already running.", "Clevo Fan Control", MessageBoxButtons.OK, MessageBoxIcon.Information);

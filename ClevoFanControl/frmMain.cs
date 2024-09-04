@@ -237,6 +237,8 @@ namespace ClevoFanControl
             MessageBox.Show("An unexpected error has occurred, fans have been set to 100% for safety.", "Clevo Fan Control Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
+        private int retryCount = 0;
+
         private void tmrMain_Tick(object sender, EventArgs e)
         {
             //fanUpdateTick = !fanUpdateTick;
@@ -247,6 +249,15 @@ namespace ClevoFanControl
 
             if (currentCpuTemp > maxCpuTemp)
             {
+                if (currentCpuTemp - maxCpuTemp > 40 && retryCount < 10)
+                {
+                    retryCount++;
+                    return;
+                }
+                else
+                {
+                    retryCount = 0;
+                }
                 maxCpuTemp = currentCpuTemp;
             }
             if (currentGpuTemp > maxGpuTemp)

@@ -32,6 +32,15 @@
   <PropertyGroup>
     <ApplicationManifest>app.manifest</ApplicationManifest>
   </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>lalakicn.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <DelaySign>true</DelaySign>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -82,6 +91,7 @@
     </Content>
     <EmbeddedResource Include="ClevoEcInfo.dll.gz" />
     <None Include="clevofancontrol.png" />
+    <None Include="lalakicn.pfx" />
     <None Include="nvidia.png" />
     <None Include="intel.png" />
   </ItemGroup>
@@ -94,6 +104,6 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>lalaki_sign "$(TargetPath)"</PostBuildEvent>
+    <PostBuildEvent>"C:\Program Files (x86)\Microsoft SDKs\ClickOnce\SignTool\signtool.exe" sign /f  $(ProjectDir)lalakicn.pfx /p %25mypasseasy%25 /t http://timestamp.digicert.com /fd SHA256 "$(TargetPath)"</PostBuildEvent>
   </PropertyGroup>
 </Project>
