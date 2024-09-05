@@ -250,14 +250,14 @@ namespace ClevoFanControl
 
             if (currentCpuTemp > maxCpuTemp)
             {
-                if (currentCpuTemp - maxCpuTemp > 40 && retryCount < 6)
+                if (currentCpuTemp > 92 && retryCount < 8)
                 {
                     retryCount++;
                     if (retryResetTimer == null)
                     {
                         retryResetTimer = new System.Windows.Forms.Timer
                         {
-                            Interval = 300000
+                            Interval = 180000
                         };
                         retryResetTimer.Tick += RetryResetTimer_Tick;
                         retryResetTimer.Start();
